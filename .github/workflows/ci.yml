@@ -28,7 +28,7 @@ jobs:
     - name: 部署
       uses: easingthemes/ssh-deploy@v2.1.5
       with:
-        SERVER_SSH_KEY: ${{ secrets.SERVER_SSH_KEY }} # 指定密钥，key即密钥名称
+        SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }} # 指定密钥，key即密钥名称
         ARGS: '-rltgoDzvO --delete'
         SOURCE: dist # 这是要复制到阿里云静态服务器的文件夹名称
         REMOTE_HOST: ${{ secrets.SERVER_HOST }} # 你的阿里云公网地址
